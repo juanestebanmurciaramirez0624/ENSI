@@ -1,0 +1,28 @@
+<!--Navbar-->
+<div id="close" class="navbar">
+    <a routerLink="/dashboard">
+        <div class="logo-content" >
+        <img src="../../../assets/img/logo.png" alt="logo" width="50" height="50">
+        <div class="logo-name">
+            <span>ENS</span><span class="color-i">Ibague</span>
+        </div>
+    </div>
+        <ul class="menu">
+            <li><a routerLink="/dashboard"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+            <li><a routerLink="/usuarios"> <i class="fa-solid fa-user"></i> Usuarios</a></li>
+            <li><a routerLink="/refrigerios"> <i class="fa-solid fa-cookie-bite"></i> Refrigerios</a></li>
+            <li><a routerLink="/cursos"> <i class="fa-solid fa-graduation-cap"></i> Cursos</a></li>
+            <li><a routerLink="/asignaciones"> <i class="fa-solid fa-pen-to-square"></i> Asiganaciones</a></li>
+            <li><a> <i class="fa-solid fa-question"></i> Ayuda</a></li>
+        </ul>
+        <ul class="menu">
+            <li>
+                <a class="logout" routerLink="/index" (click)="logOut()"> 
+                    <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i> Salir
+            </a>
+        </li>
+        </ul>
+    </a>
+</div>
+
+

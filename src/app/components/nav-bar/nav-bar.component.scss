@@ -1,0 +1,111 @@
+.fa-solid{
+    font-size: 1.7rem;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--white);
+    width: 230px;
+    height: 100%;
+    z-index: 2000;
+    overflow-x: hidden; //Evita que los elementos que sobrepasen el contenedor sea visibles
+    scrollbar-width: none; //Elimina el scroll pero no elimina su funcion
+    &::-webkit-scrollbar{ //Permite modificar la apariencia de la barra lateral
+        display: none;
+    }
+}
+
+.navbar.close{
+    width: 60px;
+}
+
+.navbar .logo{
+    font-size: 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    z-index: 500;
+    padding-bottom: 20px;
+    box-sizing: content-box; //el tamaño total sera el del elemento sin importar su border, padding
+}
+
+.logo-content{
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 8px 0 0 0;
+}
+.logo-name{
+    margin: 0 0 0 10px;
+}
+
+.logo-name .color-i{
+    color: var(--blue);
+}
+
+.navbar .logo .fa-solid{
+    min-width: 60px;
+    display: flex;
+    justify-content: center;
+    font-size: 2.2rem;
+}
+
+.navbar .menu{
+    width: 100%;
+    margin-top: 48px;
+}
+
+.navbar .menu li{
+    height: 48px;
+    background: transparent;
+    margin-left: 6px;
+    margin-top: 10px;
+    border-radius: 48px 0 0 48px;
+    padding: 4px;
+    &:hover{
+        background: var(--grey);
+        position: relative;
+    }
+}
+
+.navbar .menu li a{
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    border-radius: 48px;
+    font-size: 16px;
+    color: var(--dark);
+    white-space: nowrap; //El texto dentro del elemento no se podra dividir en varias lineas
+    overflow-x: hidden;
+}
+
+.navbar .menu li:hover a{
+    color: var(--blue);
+}
+
+.navbar.close .menu li a{
+    width: calc(48px - (4px *2 ));
+}
+
+.navbar .menu li a .fa-solid{
+    min-width: calc(60px - ((4px + 6px) *2));
+    display: flex;
+    font-size: 1.6rem;
+    justify-content: center;
+}
+
+.navbar .menu li a.logout{
+    color: var(--red);
+}
+
+.navbar .menu li:hover a.logout{
+    color: var(--redPDF);
+}
+

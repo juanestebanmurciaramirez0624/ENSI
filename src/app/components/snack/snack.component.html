@@ -1,0 +1,43 @@
+<div id="dark">
+<app-nav-bar></app-nav-bar>
+<div id="changeClass" class="content">
+    <app-header></app-header>
+
+    <main>
+        <app-main-header></app-main-header>
+        <div class="content-table">
+            <div class="table">
+                <div class="header-table">
+                <div>
+                    <h3>Tabla Refrigerios</h3>
+                </div>
+                    <span></span>
+                    <app-sign-in></app-sign-in>
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Tipo de refrigerio</th>
+                        <th>id usuario</th>
+                        <th>Modficar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let snack of listSnack">
+                            <td>{{ snack.description }}</td>
+                            <td>{{ snack.stock }}</td>
+                            <td>{{ snack.typeSnack}}</td>
+                            <td>{{ snack.idUser}}</td>
+                            <td><app-modify-user></app-modify-user></td> 
+                            <td><app-delete-user></app-delete-user></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</div>
+</div>

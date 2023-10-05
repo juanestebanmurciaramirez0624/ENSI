@@ -1,0 +1,112 @@
+<div id="dark">
+<app-nav-bar></app-nav-bar>
+
+    <div id="changeClass" class="content">
+        <app-header></app-header>
+
+        <!--main dashboard-->
+        <main> 
+            <app-main-header></app-main-header>
+            <!--Cards CRUD-->
+            <ul class="cards">
+                <li>
+                    <i class="fa-solid fa-user"></i>
+                    <span class="info">
+                        <h3>
+                            Usuarios
+                        </h3>
+                        <p>Modulo Usuarios</p>
+                    </span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-cookie-bite"></i>
+                    <span class="info">
+                        <h3>
+                            Refrigerios
+                        </h3>
+                        <p>Modulo Refrigerios</p>
+                    </span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span class="info">
+                        <h3>
+                            Cursos
+                        </h3>
+                        <p>Modulo Cursos</p>
+                    </span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span class="info">
+                        <h3>
+                            Asignar
+                        </h3>
+                        <p>Modulo Asignar</p>
+                    </span>
+                </li>
+            </ul>
+
+            <!--Table-->
+            <div class="content-table">
+                <div class="table-course">
+                    <div class="header">
+                        <i class="fa-solid fa-user"></i>
+                        <h3>Tabla Cursos</h3>
+                        <span></span>
+                        <a routerLink="/cursos" class="btn">Ver todo</a>    
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>sede</th>
+                                <th>Numero de estudiantes</th>
+                                <th>Director</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let course of listCourse; let i = index">
+                                <ng-container *ngIf="i < 4">
+                                    <td>{{ course.name }}</td>
+                                    <td>{{ course.campus }}</td>
+                                    <td>{{ course.numberStudents }}</td>
+                                    <td>{{ course.director }}</td>
+                                </ng-container>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--Table users-->
+                <div class="table-user">
+                    <div class="header">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h3>Tabla Usuarios</h3>
+                        <span></span>
+                        <a routerLink="/usuarios" class="btn">Ver todo</a>    
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Telefono</th>
+                                <th>Rol</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of listUser; let i = index">
+                                <ng-container *ngIf="i < 4">
+                                    <td>{{ user.fullName }}</td>
+                                    <td>{{ user.phone }}</td><br>
+                                    <td>{{ user.role }}</td>
+                                </ng-container>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+    </div>  
+</div>

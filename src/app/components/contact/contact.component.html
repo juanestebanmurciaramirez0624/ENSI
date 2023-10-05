@@ -1,0 +1,15 @@
+<button (click)="showModalContact()" label="Login" class="hero-btn">Contacenos</button>
+<p-dialog [(visible)]="displayModal" [style]="{ width: '400px' }" [modal]="true" [draggable]="false" [resizable]="false"  [breakpoints]="{ '960px': '75vw' }">
+    <ng-template pTemplate="header" >
+        <b></b>
+            <h2 class="title-login">Contacenos</h2>
+    </ng-template>
+<form>
+    <input type="text" class="form-input" name="name" placeholder="Nombre" />
+    <input type="text" class="form-input" name="phone" placeholder="Numero" pattern="[0-9]{10}" title="Ingrese un número de teléfono válido de 10 dígitos"/>
+    <input type="email" class="form-input" name="email" placeholder="Correo" />
+    <textarea class="form-input custom-textarea" name="message" placeholder="Mensaje" cols="20" rows="5"></textarea>
+    <button class="form-button">Enviar</button>
+</form>
+</p-dialog>
+

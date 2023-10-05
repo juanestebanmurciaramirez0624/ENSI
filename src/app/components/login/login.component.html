@@ -1,0 +1,15 @@
+<button (click)="showModal()" label="Login" class="hero-btn">Login</button>
+<p-dialog [(visible)]="displayModal" [style]="{ width: '400px' }" [modal]="true" [draggable]="false" [resizable]="false"  [breakpoints]="{ '960px': '75vw' }">
+    <ng-template pTemplate="header" >
+        <b></b>
+            <h2 class="title-login">Login</h2>
+    </ng-template>
+    <!--formGroup permite hacer formulario reactivos-->
+    <form *ngIf="!loading">
+    <input type="text" name="username" [(ngModel)] = "username" class="form-input" placeholder="Usuario"/>
+    <input type="password" name="password" [(ngModel)] = "password" class="form-input" placeholder="Contraseña"/>
+    <button class="form-button" (click)= "login()" >Iniciar Sesión</button> 
+    </form>
+    <app-spinner *ngIf="loading"></app-spinner>
+</p-dialog>
+

@@ -1,1 +1,272 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;;
+}
+
+:root{
+    --white: #fff;
+    --index-white: #fefefe;
+    --blue: #009688;
+    --gray: #777;
+    --dark-white: #fff3f3;
+    --grey: #eee;
+    --primary: #1976d2;
+    --dark: #363949;
+    --index-dark: #363949;
+    --light: #f6f6f9;
+    --index-light: #f6f6f6;
+    --red: #d32f2f;
+    --yellow: #fbc02d;
+    --green: #32ba38; 
+    --redPDF: #f62222;
+    --light-primary: #cfe8ff;
+    --light-red: #fecdd3;
+    --light-yellow: #fff2c6;
+    --light-green: #bbf7d0;
+}
+
+.dark{
+    --light: #181a1e;
+    --white: #181a1e;
+    --grey: #25252c;
+    --dark: #fbfbfb;
+    background: var(--grey);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+//Modal
+.title-login{
+    margin-top: 20px;
+}
+
+.form-input{
+    width: 90%;
+    margin: 25px 0 0;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--gray);
+    &:focus{
+        border-bottom: 2px solid var(--blue)
+    }
+}
+
+.form-button {
+    width: 65%;
+    font-weight: bold;
+    background: var(--blue);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 30px 0 20px 0;
+    border: 1px solid;
+    &:hover{
+        background: var(--white);
+        color: var(--blue);
+        transition: 0.5s;
+    }
+}
+
+.hero-btn{
+    outline: none;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--index-white);
+    border: 1px solid var(--index-white);
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    &:hover{
+        border: 1px solid var(--blue);
+        background: var(--blue);
+        transition: 1s;
+    }
+}
+
+//CRUD form
+.form-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-column {
+    margin-right: 10px;
+    padding: 10px;
+}
+
+select option{
+    color: var(--gray);
+}
+
+.button {
+    width: 100%;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.content,
+.active{
+    position: relative;
+    transition: all 0.3 ease;
+}
+
+.active{
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+.content{
+    width: calc(100% - 230px);
+    left: 230px;
+}
+
+main{
+    width: 100%;
+    padding: 15px 24px;
+    height: 100vh;
+    background: var(--grey);
+}
+
+//Responsive
+@media screen and (max-width: 300px){
+    .navbar{
+        width: 200px;
+    }
+    .content,
+    .active{
+        width: calc(100% - 60px);
+        left: 200px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .content nav form .form-header input,
+    .active nav form .form-header input{
+        display: none;
+    }
+    
+    .content nav form .form-header button,
+    .active nav form .form-header button{
+        width: auto;
+        height: auto;
+        background: transparent;
+        color: var(--dark);
+        border-radius: none;
+    }
+    
+    .content nav form.show .form-header input{
+        display: block;
+        width: 100%;
+    }
+
+    .content nav form.show .form-header button,
+    .active nav form.show .form-header button{
+        width: 36px;
+        height: 100%;
+        color: var(--white);
+        background: var(--red);
+        border-radius: 0 36px 36px 0;
+    }
+
+    .profile{
+        display: none;
+    }
+}
+
+//tables
+
+.content-table{
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 24px;
+    margin-top: 24px;
+    width: 100%;
+    color: var(--dark);
+}
+
+.content-table>div{
+    border-radius: 20px;
+    background: var(--white);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.content-table .header-table{
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.content-table .table{
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+.content-table .table table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.content-table .table table th{
+    padding-bottom: 10px;
+    font-size: 13px;
+    text-align: left;
+    border-bottom: 1px solid var(--grey);
+    width: 10%;
+}
+
+.content-table .table table td{
+    padding: 10px 0;
+    border-bottom: 1px solid var(--grey);
+    width: 10%;
+}
+
+.btn{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--primary);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+    &:hover{
+        background: var(--blue);
+    }
+}
+
+.btn-modificar{
+    background: var(--green);
+    color: var(--white);
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 5px;
+    &:hover{
+        background: var(--green);
+    }
+}
+
+.btn-eliminar{
+    background: var(--red);
+    color: var(--white);
+    border-radius: 6px;
+    cursor: pointer;
+    &:hover{
+        background: var(--red);
+    }
+}

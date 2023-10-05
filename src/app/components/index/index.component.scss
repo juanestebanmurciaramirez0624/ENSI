@@ -1,0 +1,292 @@
+//Header y navabar
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url('../../../assets/img/background-header.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    padding: 2%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 100px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+    &::after{
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: var(--blue);
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+    }
+    &:hover::after{
+        width: 100%;
+    }
+}
+
+.nav-links ul li a{
+    color: var(--index-white);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+//Section Welcome
+.content-tex-box{
+    width: 90%;
+    color: var(--index-white);
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    text-align: center;
+}
+
+.content-tex-box h1{
+    font-size: 62px;
+}
+
+.content-tex-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: var(--index-white);
+}
+
+nav .fa-solid{
+    display: none;
+}
+
+// Card campus
+.cards{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 100px;
+}
+
+.cards h1{
+    font-size: 36px;
+    font-weight: 600; 
+}
+
+.cards p{
+    color: var(--gray);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.col{
+    flex-basis: 31%;
+    background: var(--dark-white);
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    &:hover{
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+}
+
+.col h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+//Cards vision, mission and values
+.vmv{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.vmv-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.vmv-col img{
+    width: 100%;
+    display: block;
+}
+
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    cursor: pointer;
+    padding: 10px;
+    opacity: 0;
+    &:hover{
+        opacity: 1;
+        transition: 1s;
+    }
+    &.vision:hover{
+        background: rgba(76, 175, 80, 0.7);
+    }
+    &.mission:hover{
+        background: rgba(0, 116, 228, 0.7);
+    }
+    &.values:hover{
+        background: rgba(255, 0, 0, 0.7);
+    }
+}
+
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: var(--index-white);
+    bottom: 80%;
+    font-size: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.layer:hover h3, p{
+    opacity: 1;
+}
+
+.layer p{
+    width: 100%;
+    color: var(--index-white);
+    transform: translateY(50%);
+}
+
+//Activitys ENSI
+.activitys{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.activitys-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+.activitys-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.activitys-col p{
+    padding: 0;
+}
+
+.activitys-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.cta{
+    margin: 100px auto;
+    width: 90%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('../../../assets/img/background-header.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.cta h1{
+    color: var(--index-white);
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+//Responsive navbar
+@media (max-width: 700px){
+    .cta h1{
+        font-size: 24px;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links{
+        position: absolute;
+        background: var(--blue);
+        height: 100vh;
+        width: 200px;
+        top:0;
+        right:-200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    nav .fa-solid{
+        display: block;
+        color: var(--index-white);
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+
+//Footer ENSI
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer h4{
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.icons .fa-brands{
+    color:  var(--blue);
+    margin: 0 13px;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 18px 0;
+}

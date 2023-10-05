@@ -1,0 +1,43 @@
+<div id="dark">
+<app-nav-bar></app-nav-bar>
+<div id="changeClass" class="content">
+    <app-header></app-header>
+
+    <main>
+        <app-main-header></app-main-header>
+        <div class="content-table">
+            <div class="table">
+                <div class="header-table">
+                <div>
+                    <h3>Tabla Asignaciones</h3>
+                </div>
+                    <span></span>
+                    <app-sign-in></app-sign-in>
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>id curso</th>
+                        <th>id refigerio</th>
+                        <th>Cantidad</th>
+                        <th>Fecha</th>
+                        <th>Modficar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let assign of listSnack">
+                            <td>{{ assign.idCourse }}</td>
+                            <td>{{ assign.idSnack }}</td>
+                            <td>{{ assign.allocatedAmount}}</td>
+                            <td>{{ assign.assignedDate}}</td>
+                            <td><app-modify-user></app-modify-user></td> 
+                            <td><app-delete-user></app-delete-user></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</div>
+</div>

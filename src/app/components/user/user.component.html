@@ -1,0 +1,54 @@
+<div id="dark">
+    <app-nav-bar></app-nav-bar>
+    <div id="changeClass" class="content">
+        <app-header></app-header>
+        
+        <main>
+          <app-main-header></app-main-header>
+          <div class="content-table">
+            <div class="table">
+                <div class="header-table">
+                  <div>
+                    <h3>Tabla Usuarios</h3>
+                  </div>
+                    <span></span>
+                    <app-sign-in></app-sign-in>
+                </div>
+                <table>
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Género</th>
+                        <th>Tipo de documento</th>
+                        <th>Documento</th>
+                        <th>Teléfono</th>
+                        <th>Correo</th>
+                        <th>Dirección</th>
+                        <th>Rol</th>
+                        <th>Nombre de usuario</th> 
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of listUser">
+                            <td>{{ user.fullName }}</td>
+                            <td>{{ user.gender }}</td>
+                            <td>{{ user.typeDocument}}</td>
+                            <td>{{ user.document}}</td>
+                            <td>{{ user.phone}}</td>
+                            <td>{{ user.email}}</td>
+                            <td>{{ user.address}}</td>
+                            <td>{{ user.role}}</td>
+                            <td>{{ user.username}}</td>
+                            <td><app-modify-user></app-modify-user></td> 
+                            <td><app-delete-user></app-delete-user></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </main>
+    </div>
+  </div>
+  
